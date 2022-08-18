@@ -1,7 +1,6 @@
 
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, avoid_unnecessary_containers
 
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:covid_tracker/CovidData/covid_apiFetcing.dart';
 import 'package:covid_tracker/Models/CovidModel.dart';
 import 'package:covid_tracker/pages/countryListScreen.dart';
@@ -30,19 +29,6 @@ class _CovidCasesScreenState extends State<CovidCasesScreen> with TickerProvider
   duration: const Duration(seconds: 3),vsync: this)..repeat();
   
   ApiFetching apiDataFetching = ApiFetching();
-
-  checkInternet() async {
-     var connectivityResult = await (Connectivity().checkConnectivity());
-
-    if(connectivityResult == ConnectivityResult.wifi ||
-    connectivityResult == ConnectivityResult.mobile) {
-      print("yes");
-    }
-    else {
-      print("no");
-    }
-  }
-
 
   @override
   Widget build(BuildContext context) {
